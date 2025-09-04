@@ -1,0 +1,57 @@
+<html><head><title>Header | Spring Valley Dental Associates</title><meta content="Header | Spring Valley Dental Associates at Spring Valley Dental Associates in Dallas, TX. Call (972) 852-2222 or email info@springvalleydentistry.com to schedu" name="description"/></head><body><!--
+  Shared header for Spring Valley Dental Associates website.
+
+  This file defines the sitewide navigation bar and logo. It can be
+  included dynamically on every page via a simple JavaScript fetch.
+  Updating links or swapping out the logo only requires editing this
+  single file, making maintenance easy when new pages are added or
+  branding changes occur.
+-->
+<header id="site-header" class="site-header" role="banner">
+<!-- Global contact top bar -->
+<div class="top-bar">
+<span>Spring Valley Dental Associates • 14228 Midway Rd, Suite 100, Dallas, TX 75244</span>
+<a href="tel:+19728522222">Call: (972) 852-2222</a>
+</div>
+<div class="navbar">
+<a aria-label="Spring Valley Dental Associates home" class="logo" href="index.html">
+<picture class="logo" aria-label="Spring Valley logo">
+  <source media="(max-width:768px)" srcset="images/spring-valley-logo-mobile.svg" type="image/svg+xml"/>
+  <source media="(min-width:769px)" srcset="images/spring-valley-logo-desktop.svg" type="image/svg+xml"/>
+  <img src="images/spring-valley-logo-desktop.svg" alt="Spring Valley Dental" loading="eager" fetchpriority="high"/>
+</picture>
+</a>
+<nav aria-label="Primary" class="site-nav" hidden="" id="site-nav">
+<ul class="site-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="emergency.html">Emergency</a></li>
+<li><a data-nowrap="" href="patient-info.html">Patient Info</a></li>
+<li><a href="reviews.html">Reviews</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a class="cta" data-nowrap="" href="contact.html">Book Online</a></li>
+</ul>
+</nav>
+<div class="nav-overlay" hidden></div>
+<button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation menu" class="hamburger" id="nav-toggle" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="nav-overlay" hidden="" id="nav-overlay"></div>
+</header>
+<main id="main">
+<script defer="" src="nav.js"></script>
+</main>
+<!-- Global Patient Quick Actions (injected) -->
+<nav class="sticky-cta-bar" role="navigation" aria-label="Patient quick actions">
+  <a class="cta-link call" href="tel:19728522222" aria-label="Call our office">Call</a>
+  <a class="cta-link book" href="contact.html" aria-label="Book an appointment online">Book</a>
+  <a class="cta-link directions" href="https://www.google.com/maps/place/14228+Midway+Rd+%23100,+Dallas,+TX+75244/@32.943659,-96.838108,14z/data=!4m6!3m5!1s0x864c26d39eab13f3:0x3e1243026b4b017b!8m2!3d32.9436588!4d-96.8381082!16s%2Fg%2F11qpmyb56j?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" aria-label="Directions and hours">Directions</a>
+</nav>
+<div id="nav-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<script src="js/cta-config.js"></script>
+<script src="js/menu-enhancements.js"></script>
+</body></html>

@@ -1,0 +1,114 @@
+/*
+ * blog-post.css
+ *
+ * Additional styling for individual blog article pages. These rules
+ * focus on improved readability and align with the design brief for
+ * Spring Valley Dental Associates. Text is set larger with generous line
+ * height, headings use the brand colours and fonts, and subtle
+ * separators provide visual breathing room between sections. When
+ * combined with the existing site styles this file creates a calm,
+ * modern reading experience that remains consistent with the rest of
+ * the website.
+ */
+
+/* Restrict the maximum width of blog content for easier reading */
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--color-text-primary);
+}
+
+/* Headings are set in Montserrat and feature a coloured left border
+   to draw the eye without overwhelming the page. */
+.blog-post h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  border-left: 4px solid var(--color-primary-accent);
+  padding-left: 0.75rem;
+}
+
+/* Paragraph spacing for comfortable reading rhythm */
+.blog-post p {
+  margin-bottom: 1.25rem;
+}
+
+/* Emphasised text appears in the secondary colour for subtle
+   differentiation */
+.blog-post em {
+  color: var(--color-text-secondary);
+}
+
+/* Horizontal rules serve as separators between meta information and
+   content; the colour ties back into the neutral palette */
+.blog-post hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px solid var(--color-neutral-medium);
+}
+
+/* Adjust button spacing within blog posts */
+.blog-post .button-group {
+  margin-top: 2rem;
+}
+
+/* Ensure the last paragraph has breathing room at the bottom */
+.blog-post p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ======== ADA Mobile Bottom CTA Bar & Mobile Header Tweaks (added 2025-09-02) ======== */
+
+/* Global Sticky CTA Bar (mobile only) */
+.sticky-cta-bar { display:none; }
+
+@media (max-width: 768px) {
+  :root{
+    --cta-bar-h: 64px; /* meets 44x44 target size */
+  }
+  .sticky-cta-bar {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 0.5rem; padding: 0.5rem;
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+    background: #fff; box-shadow: 0 -4px 16px rgba(0,0,0,.12);
+    z-index: 1001; /* above header */
+  }
+  .sticky-cta-bar .cta-link{
+    display: grid; place-items: center;
+    height: var(--cta-bar-h);
+    border-radius: 12px; text-decoration: none; font-weight: 700;
+    border: 2px solid transparent;
+  }
+  .sticky-cta-bar .call     { background: var(--color-primary-accent); color:#fff; }
+  .sticky-cta-bar .book     { background: var(--color-primary);        color:#fff; }
+  .sticky-cta-bar .directions { background: var(--color-neutral-medium); color: var(--color-text-primary); }
+  .sticky-cta-bar .cta-link:focus-visible{ outline: 3px solid var(--color-primary-accent); outline-offset: 2px; }
+  body { padding-bottom: calc(var(--cta-bar-h) + 1rem); }
+}
+
+@media (max-width: 768px) {
+  .site-header .navbar { padding: .5rem .75rem; }
+  .site-header .logo img{ max-height: 28px; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding-top: calc(2.5rem + 56px); }
+}
+
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+@media (max-width:768px){
+  .emergency-bottom-bar, .emergency-sticky-cta { display:none !important; }
+}
+
+/* ===== Responsive logo sizing (Spring Valley) ===== */
+.logo img{ display:block; height:auto; width:auto; max-width:100%; }
+@media (min-width:769px){ #site-header{ height:84px; } .logo img{ max-height:64px; } }
+@media (max-width:768px){ #site-header{ height:64px; } .logo img{ max-height:48px; } }
